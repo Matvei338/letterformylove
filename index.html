@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ТЕКСТ: Название вкладки в браузере -->
+  <title>Для моей любимости ❤️</title>
+  
+  <!-- Подключение милого шрифта -->
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Подключение файла со стилями -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ЭКРАН 1: Открытка -->
+  <section class="screen active" id="screen-1">
+    <div class="card">
+      
+      <!-- КАРТИНКА 1: Замени этот блок на свою картинку (см. инструкцию ниже) -->
+      <div class="image-box">
+        <img src="cat.png" class="main-img" alt="Котик">
+      </div>
+      
+      <!-- ТЕКСТ: Главный заголовок на 1 экране -->
+      <h1>Спасибо за эти 3 месяца,<br>моя любимая!</h1>
+      
+      
+      <!-- ТЕКСТ: Подсказка над кнопкой -->
+      <p class="hint">Нажми на кнопку ниже! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</p>
+      
+      <!-- ТЕКСТ: Текст на кнопке "Дальше" -->
+      <button class="btn btn-pink" id="btn-next">Дальше! </button>
+    </div>
+  </section>
+
+  <!-- ЭКРАН 2: Конверт -->
+  <section class="screen" id="screen-2">
+    <div class="card">
+      
+      <!-- КАРТИНКА 2: Замени на картинку конверта -->
+      <div class="image-box">
+       <img src="envelope.png" class="main-img large" alt="Письмо">
+      </div>
+      
+      <!-- ТЕКСТ: Заголовок на 2 экране -->
+      <h2>Хочешь открыть его?</h2>
+      
+      <!-- ТЕКСТ: Смайлик под заголовком -->
+      <p class="sub-text">"ヽ(≧□≦)ノ"</p>
+      
+      <div class="btn-row">
+        <!-- ТЕКСТ: Кнопка "Да" -->
+        <button class="btn btn-pink" id="btn-yes">Открыть!</button>
+        
+        <!-- ТЕКСТ: Кнопка "Нет" -->
+        <button class="btn btn-teal" id="btn-no">Нет</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЭКРАН 3: Плачущий смайл -->
+  <section class="screen" id="screen-3">
+    <div class="card">
+      
+      <!-- КАРТИНКА 3: Замени на плачущий смайл -->
+      <div class="image-box">
+        <img src="cry.png" class="main-img" alt="Плачущий">
+      </div>
+      
+      <!-- ТЕКСТ: Заголовок на 3 экране -->
+      <h2>Попробуй еще раз, пожалуйста...</h2>
+      
+      <!-- ТЕКСТ: Смайлик под заголовком -->
+      <p class="sub-text">&gt;_&lt;</p>
+      
+      <!-- ТЕКСТ: Кнопка "Ещё раз?" -->
+      <button class="btn btn-pink" id="btn-back">Ещё раз?</button>
+    </div>
+  </section>
+
+  <!-- ЭКРАН 4: Письмо -->
+  <section class="screen" id="screen-4">
+    <div class="card letter-card">
+      
+      <!-- ТЕКСТ: Заголовок над письмом -->
+      <h2>Ооо... Письмо!</h2>
+      
+      <!-- ТЕКСТ: Смайлик над письмом -->
+      <p class="sub-text">(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ !!</p>
+      
+      <div class="letter-content">
+        <!-- ТЕКСТ: Приветствие внутри письма -->
+        <h3>Привет, моя любимая (^o^)</h3>
+        
+        <!-- ↓↓↓ ТУТ ПИШЕМ ПИСЬМО (Каждый абзац в теге <p>) ↓↓↓ -->
+        <p>Любимость моя,спасибо тебе за эти 3 месяца!</p>
+        <p>Ты самая любимая, красивая и самая лучшая девушка в этом мире!</p>
+        <p>Очень сильно люблю тебя!</p>
+
+      </div>
+
+      <!-- ТЕКСТ: Кнопка возврата в начало -->
+      <button class="btn btn-pink" id="btn-restart">Начать заново ❤️</button>
+    </div>
+  </section>
+
+  <!-- Подключение файла с логикой -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+/* =========================================================
+   ⚙️ НАСТРОЙКИ ДИЗАЙНА (МЕНЯЙ ЦВЕТА ЗДЕСЬ)
+   ========================================================= */
+:root {
+  /* Цвета для плавного градиента фона (бери близкие пастельные оттенки) */
+  --bg-color-1: #fff0f5; /* Бледно-розовый */
+  --bg-color-2: #ffd1dc; /* Розовый */
+  --bg-color-3: #e6e6fa; /* Лавандовый */
+
+  /* Цвета текста */
+  --text-main: #ff6b81;  /* Розовый (заголовки) */
+  --text-dark: #4a3b3b;  /* Темный (текст письма) */
+  --text-grey: #888888;  /* Серый (подсказки) */
+
+  /* Цвета кнопок и обводок */
+  --btn-pink: #ff9aae;   /* Кнопка "Дальше" и "Да" */
+  --btn-teal: #42dcb2;   /* Кнопка "Нет" */
+  --border-color: #ffb6c1; /* Прямая обводка карточек */
+
+  /* Формы */
+  --card-radius: 20px;   /* Закругление углов */
+  --border-width: 2px;   /* Толщина обводки */
+}
+/* ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Comfortaa', cursive, sans-serif;
+  /* ПЛАВНЫЙ ГРАДИЕНТ (Тянет цвета из настроек выше) */
+  background: linear-gradient(135deg, var(--bg-color-1) 0%, var(--bg-color-2) 50%, var(--bg-color-3) 100%);
+  min-height: 100vh;
+  overflow: hidden; /* Запрет прокрутки, чтобы кнопка не улетала за край */
+  color: var(--text-dark);
+}
+
+/* Экраны */
+.screen {
+  display: none;
+  position: fixed;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.4s ease;
+}
+.screen.active { display: flex; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Белая карточка с прямой обводкой */
+.card {
+  background: #fffdfd;
+  padding: 30px 25px;
+  border-radius: var(--card-radius);
+  border: var(--border-width) solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(255, 182, 193, 0.2);
+  text-align: center;
+  max-width: 480px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Рамка вокруг картинки (теперь без обводки) */
+.image-box {
+  background: transparent; /* Прозрачный фон */
+  border: none;            /* Убрали обводку */
+  padding: 0;              /* Убрали внутренние отступы */
+  margin: 0 auto 20px auto; /* Оставили отступ снизу, чтобы текст не прилипал */
+  width: fit-content;
+}
+
+.emoji { font-size: 80px; line-height: 1; }
+.main-img { max-width: 200px; border-radius: 10px; display: block; }
+.main-img.large {
+  max-width: 320px; /* Делаем картинку больше (было 200, стало 320) */
+}
+
+/* Текст */
+h1 { font-size: 22px; margin-bottom: 10px; color: var(--text-main); line-height: 1.4; }
+h2 { font-size: 20px; margin-bottom: 10px; color: var(--text-main); }
+h3 { font-size: 18px; margin-bottom: 15px; color: var(--text-main); text-align: center; }
+.sub-text { font-size: 16px; color: var(--text-main); margin-bottom: 15px; }
+.hint { font-size: 14px; color: var(--text-grey); margin-bottom: 20px; }
+
+/* Кнопки */
+.btn {
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-family: 'Comfortaa', cursive, sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn:hover { transform: scale(1.05); }
+.btn:active { transform: scale(0.95); }
+
+.btn-pink { background: var(--btn-pink); box-shadow: 0 4px 15px rgba(255, 154, 174, 0.4); }
+.btn-teal { background: var(--btn-teal); box-shadow: 0 4px 15px rgba(66, 220, 178, 0.4); }
+.btn-row { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 10px; }
+
+/* Увеличение кнопки "Да" РОВНО В 1.5 РАЗА */
+.btn-pink.grown { transform: scale(1.5); z-index: 10; }
+
+/* Стили для убегающей кнопки "Нет" */
+.btn-teal.escaping {
+  position: fixed;
+  z-index: 999;
+  touch-action: none;
+  transition: left 0.2s ease, top 0.2s ease, transform 0.2s ease;
+}
+
+/* Текст письма */
+.letter-card { padding: 25px 20px; }
+.letter-content {
+  text-align: left;
+  background: #fffafb;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+.letter-content p { font-size: 15px; line-height: 1.6; margin-bottom: 15px; color: var(--text-dark); }
+.letter-content p:last-child { margin-bottom: 0; }
+
+/* Адаптация под маленькие экраны телефонов */
+@media (max-width: 400px) {
+  .card { padding: 20px 15px; }
+  h1 { font-size: 20px; }
+  .emoji { font-size: 60px; }
+  .btn { padding: 10px 20px; font-size: 14px; }
+}
